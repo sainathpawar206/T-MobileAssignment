@@ -59,10 +59,7 @@ public class Filters {
             IntStream.range(0, optionElements.size()).forEach(i->optionElements.get(i).click());
 
         }else {
-            for (String option : options) {
-                WebElement filterOptionElement = groupElement.findElement(By.xpath("//span[@class='filter-display-name' and contains(text(),'" + option + "')]"));
-                filterOptionElement.click();
-            }
+            IntStream.range(0, options.length).forEach(i->groupElement.findElement(By.xpath("//span[@class='filter-display-name' and contains(text(),'" + options[i] + "')]")).click());
         }
     }
 
